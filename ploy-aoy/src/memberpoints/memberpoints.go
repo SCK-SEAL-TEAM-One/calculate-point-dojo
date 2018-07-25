@@ -5,6 +5,10 @@ func CalculatePoints(name, memberlevel string, points, amount int) int {
 		points = points + ((amount / 200) * 2)
 		return points
 	}
+	if memberlevel == "Regular" {
+		points = points + ((amount / 200) * 1)
+		return points
+	}
 	return 0
 
 }

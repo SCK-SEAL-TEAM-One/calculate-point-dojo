@@ -24,3 +24,13 @@ func Test_CalculatePoints_Input_Name_Lek_MemberLevel_Silver_Points_20_Amount_300
 		t.Errorf("expectedt %d but got %d", expectPoints, actualPoints)
 	}
 }
+
+func Test_CalculatePoints_Input_Name_Aun_MemberLevel_Regular_Points_5_Amount_2500_Should_Be_17(t *testing.T) {
+	expectPoints := 17
+
+	actualPoints := CalculatePoints("Aun", "Regular", 5, 2500)
+
+	if expectPoints != actualPoints {
+		t.Errorf("expectedt %d but got %d", expectPoints, actualPoints)
+	}
+}
