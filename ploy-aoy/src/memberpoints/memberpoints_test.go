@@ -34,3 +34,13 @@ func Test_CalculatePoints_Input_Name_Aun_MemberLevel_Regular_Points_5_Amount_250
 		t.Errorf("expectedt %d but got %d", expectPoints, actualPoints)
 	}
 }
+
+func Test_CalculatePoints_Input_Name_Nut_MemberLevel_Gold_Points_111_Amount_2500_Should_Be_147(t *testing.T) {
+	expectPoints := 147
+
+	actualPoints := CalculatePoints("Nut", "Gold", 111, 2500)
+
+	if expectPoints != actualPoints {
+		t.Errorf("expectedt %d but got %d", expectPoints, actualPoints)
+	}
+}
