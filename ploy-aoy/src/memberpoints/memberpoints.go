@@ -1,18 +1,36 @@
 package memberpoints
 
+const (
+	Regular = 1
+	Sliver  = 2
+	Gold    = 3
+)
+
 func CalculatePoints(name, memberlevel string, points, amount int) int {
 	if memberlevel == "Silver" {
-		points = points + ((amount / 200) * 2)
-		return points
-	}
-	if memberlevel == "Regular" {
-		points = points + ((amount / 200) * 1)
-		return points
+		return SilverMember(points, amount)
 	}
 	if memberlevel == "Gold" {
-		points = points + ((amount / 200) * 3)
-		return points
+		return GoldMember(points, amount)
+	}
+	if memberlevel == "Regular" {
+		return RegularMember(points, amount)
 	}
 	return 0
 
+}
+
+func SilverMember(points, amount int) int {
+	points = points + ((amount / 200) * Sliver)
+	return points
+}
+
+func GoldMember(points, amount int) int {
+	points = points + ((amount / 200) * Gold)
+	return points
+}
+
+func RegularMember(points, amount int) int {
+	points = points + ((amount / 200) * Regular)
+	return points
 }
